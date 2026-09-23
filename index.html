@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a7a4c" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="カロリー記録" />
+  <meta name="description" content="腹筋・スクワットなど6種目の消費カロリーを日付ごとに記録" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <title>カロリー記録</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>カロリー記録</h1>
+      <p class="subtitle">今日の運動をタップで記録</p>
+    </header>
+
+    <section class="summary" aria-label="カロリー集計">
+      <div class="summary-card today">
+        <span class="label">選択日</span>
+        <strong id="day-calories">0</strong>
+        <span class="unit">kcal</span>
+      </div>
+      <div class="summary-card total">
+        <span class="label">累計</span>
+        <strong id="total-calories">0</strong>
+        <span class="unit">kcal</span>
+      </div>
+    </section>
+
+    <section class="date-bar" aria-label="日付選択">
+      <button type="button" class="date-nav" id="prev-day" aria-label="前日">‹</button>
+      <input type="date" id="date-picker" />
+      <button type="button" class="date-nav" id="next-day" aria-label="翌日">›</button>
+      <button type="button" class="today-btn" id="goto-today">今日</button>
+    </section>
+
+    <section class="exercises" id="exercise-list" aria-label="種目カウンター"></section>
+
+    <section class="history">
+      <div class="history-header">
+        <h2>過去の記録</h2>
+        <button type="button" class="ghost-btn" id="toggle-history">表示</button>
+      </div>
+      <ul id="history-list" class="history-list hidden"></ul>
+    </section>
+
+    <footer class="footer">
+      <p>データはこの端末に保存されます</p>
+      <p class="install-hint" id="install-hint">
+        ホーム画面追加: ブラウザの「共有」→「ホーム画面に追加」
+      </p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+:root {
+  --bg: #f3f7f4;
+  --surface: #ffffff;
+  --text: #1c2b22;
+  --muted: #5d7266;
+  --primary: #1a7a4c;
+  --primary-soft: #e4f5ec;
+  --accent: #f0a202;
+  --danger: #c44536;
+  --shadow: 0 8px 24px rgba(28, 43, 34, 0.08);
+  --radius: 18px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background:
+    radial-gradient(circle at top right, #d8f3e4 0%, transparent 40%),
+    radial-gradient(circle at bottom left, #fff1cc 0%, transparent 35%),
+    var(--bg);
+  color: var(--text);
+}
+
+body {
+  padding: 16px 16px calc(28px + var(--safe-bottom));
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 18px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.65rem;
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.summary-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summary-card .label {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.summary-card strong {
+  font-size: 2rem;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.summary-card .unit {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.summary-card.today {
+  background: linear-gradient(160deg, #1a7a4c, #146340);
+  color: #fff;
+}
+
+.summary-card.today .label,
+.summary-card.today .unit {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.date-bar {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px auto;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.date-nav,
+.today-btn,
+.ghost-btn,
+.counter-btn,
+.reset-btn {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.date-nav {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+#date-picker {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #d5e3da;
+  border-radius: 12px;
+  padding: 0 12px;
+  font: inherit;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.today-btn {
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.exercises {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exercise-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.exercise-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.exercise-name {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.exercise-meta {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.exercise-kcal {
+  text-align: right;
+  font-weight: 700;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.counter-row {
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  gap: 10px;
+  align-items: center;
+}
+
+.counter-btn {
+  height: 56px;
+  border-radius: 16px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+
+.counter-btn:active {
+  transform: scale(0.96);
+}
+
+.counter-btn.plus {
+  background: var(--primary);
+  color: #fff;
+}
+
+.counter-value {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.exercise-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.reset-btn {
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.82rem;
+  padding: 4px 8px;
+}
+
+.reset-btn:hover {
+  color: var(--danger);
+}
+
+.history {
+  margin-top: 24px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.history-header h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.ghost-btn {
+  background: var(--primary-soft);
+  color: var(--primary);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.history-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history-list.hidden {
+  display: none;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--bg);
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background: var(--primary-soft);
+}
+
+.history-item .date {
+  font-weight: 700;
+}
+
+.history-item .kcal {
+  color: var(--primary);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.history-empty {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 8px 0;
+}
+
+.footer {
+  margin-top: 22px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.footer p {
+  margin: 4px 0;
+}
+
+.install-hint {
+  line-height: 1.5;
+}
+
+@media (min-width: 520px) {
+  body {
+    padding-top: 28px;
+  }
+}
