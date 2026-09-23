@@ -1,47 +1,48 @@
 const STORAGE_KEY = "cal-log-v1";
 
+// 体重60kg想定。METs × 体重 × 時間 × 1.05 から概算（個人差あり）
 const EXERCISES = [
   {
     id: "abs",
     name: "腹筋",
     unit: "回",
-    kcalPerCount: 0.5,
-    hint: "1回あたり 0.5 kcal",
+    kcalPerCount: 0.2,
+    hint: "1回あたり 0.2 kcal（体重60kg目安）",
   },
   {
     id: "back",
     name: "背筋",
     unit: "回",
-    kcalPerCount: 0.5,
-    hint: "1回あたり 0.5 kcal",
+    kcalPerCount: 0.2,
+    hint: "1回あたり 0.2 kcal（体重60kg目安）",
   },
   {
     id: "squat",
     name: "スクワット",
     unit: "回",
-    kcalPerCount: 0.4,
-    hint: "1回あたり 0.4 kcal",
+    kcalPerCount: 0.2,
+    hint: "1回あたり 0.2 kcal（自重・普通ペース）",
   },
   {
     id: "tongue",
     name: "舌回し",
     unit: "カウント",
-    kcalPerCount: 1.0,
-    hint: "1カウント = 20周 / 1.0 kcal",
+    kcalPerCount: 0.5,
+    hint: "1カウント = 20周 / 0.5 kcal（推定）",
   },
   {
     id: "vacuum",
     name: "おなかをへこませる",
     unit: "分",
     kcalPerCount: 2.0,
-    hint: "1分あたり 2.0 kcal",
+    hint: "1分あたり 2.0 kcal（ドローイン想定）",
   },
   {
     id: "walk",
     name: "ウォーキング",
     unit: "セット",
-    kcalPerCount: 40,
-    hint: "1セット = 10分 / 40 kcal",
+    kcalPerCount: 37,
+    hint: "1セット = 10分 / 37 kcal（普通歩き）",
   },
 ];
 
