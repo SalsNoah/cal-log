@@ -1,7 +1,7 @@
 {
   "name": "カロリー記録",
   "short_name": "カロリー記録",
-  "description": "6種目の消費カロリーを日付ごとに記録する個人用ツール",
+  "description": "7種目の消費カロリーを日付ごとに記録する個人用ツール",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

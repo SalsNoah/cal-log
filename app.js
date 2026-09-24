@@ -44,6 +44,13 @@ const EXERCISES = [
     kcalPerCount: 37,
     hint: "1セット = 10分 / 37 kcal（普通歩き）",
   },
+  {
+    id: "step",
+    name: "踏み台昇降",
+    unit: "セット",
+    kcalPerCount: 50,
+    hint: "1セット = 10分 / 50 kcal（台高約15cm）",
+  },
 ];
 
 const els = {

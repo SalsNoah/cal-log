@@ -1,4 +1,4 @@
-const CACHE_NAME = "cal-log-v2";
+const CACHE_NAME = "cal-log-v3";
 const ASSETS = [
   "./",
   "./index.html",
