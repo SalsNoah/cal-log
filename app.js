@@ -51,6 +51,13 @@ const EXERCISES = [
     kcalPerCount: 50,
     hint: "1セット = 10分 / 50 kcal（台高約15cm）",
   },
+  {
+    id: "radio1",
+    name: "ラジオ体操（第一）",
+    unit: "セット",
+    kcalPerCount: 13,
+    hint: "1セット = 約3分 / 13 kcal（4.0 METs）",
+  },
 ];
 
 const els = {
